@@ -4,14 +4,15 @@ import styled from "styled-components";
 import projects from "../content/projects";
 
 const SectionCard = ({ title, children }) => {
-  return <div className="sm:rounded-xl sm:ring-1 ring-neutral-700 shadow overflow-hidden lg:mb-20 mb-10">
-    <div className="text-white font-bold p-4 ring-1 ring-neutral-700 sm:mt-0 mt-[1px]">{title}</div>
-    <div className="p-10 text-zinc-300">
-      {children}
+  return (
+    <div className="sm:rounded-xl sm:ring-1 ring-neutral-700 shadow overflow-hidden lg:mb-20 mb-10">
+      <div className="text-white font-bold p-4 ring-1 ring-neutral-700 sm:mt-0 mt-[1px]">
+        {title}
+      </div>
+      <div className="p-10 text-zinc-300">{children}</div>
     </div>
-  </div>
-  };
-
+  );
+};
 
 export default () => {
   return (
@@ -23,8 +24,20 @@ export default () => {
 
       <SectionCard title="My projects">
         {projects.map((proj, i) => (
-          <div key={`${i}_proj`} className="flex flex-col lg:flex-row justify-center first:mt-0 mt-20 items-stretch">
-            <div className="text-white text-3xl mb-5 lg:mb-10 mt-1 lg:hidden">{proj.name}</div>
+          <div
+            key={`${i}_proj`}
+            className="flex flex-col lg:flex-row justify-center first:mt-0 mt-20 items-stretch"
+          >
+            <div className="text-white text-3xl mb-5 lg:mb-10 mt-1 lg:hidden flex flex-row justify-between items-baseline">
+              <div>{proj.name}</div>
+              <div className="font-thin text-lg">
+                {new Date(proj.date).toLocaleDateString("en-US", {
+                  month: "long",
+                  day: "numeric",
+                  year: "numeric",
+                })}
+              </div>
+            </div>
             <img
               src={proj.images[0]}
               /*href={proj.link}*/
@@ -34,18 +47,34 @@ export default () => {
             <div className="shrink flex-1 min-w-0 lg:px-5 pt-5 lg:py-0">
               <div className="flex flex-col h-full">
                 <div className="flex-grow">
-                  <div className="text-white text-3xl hidden lg:block mb-10 mt-1">{proj.name}</div>
-                  <div className="text-zinc-300" dangerouslySetInnerHTML={{__html:proj.description}}></div>
+                  <div className="text-white text-3xl hidden lg:flex mb-10 mt-1 flex-row justify-between items-baseline">
+                    <div>{proj.name}</div>
+                    <div className="font-thin text-lg">
+                      {new Date(proj.date).toLocaleDateString("en-US", {
+                        month: "short",
+                        day: "numeric",
+                        year: "numeric",
+                      })}
+                    </div>
+                  </div>
+                  <div
+                    className="text-zinc-300"
+                    dangerouslySetInnerHTML={{ __html: proj.description }}
+                  ></div>
                 </div>
                 <div className="flex flex-row items-center pt-5 ">
                   <div className="flex flex-row flex-1 gap-3">
-                  {proj.tools.map((t) => (
-                    <a href={t.link} target="_blank">
-                      <t.icon height="3em" className="fill-emerald-500" />
-                    </a>
-                  ))}
+                    {proj.tools.map((t) => (
+                      <a href={t.link} target="_blank">
+                        <t.icon height="3em" className="fill-emerald-500" />
+                      </a>
+                    ))}
                   </div>
-                  <a href={proj.link} target="_blank" className="shrink-0 justify-self-end no-underline text-zinc-300 ring-1 focus:outline-none font-bold rounded-lg text-sm px-5 py-2.5 text-center  hover:bg-zinc-800 ring-neutral-700">
+                  <a
+                    href={proj.link}
+                    target="_blank"
+                    className="shrink-0 justify-self-end no-underline text-zinc-300 ring-1 focus:outline-none font-bold rounded-lg text-sm px-5 py-2.5 text-center  hover:bg-zinc-800 ring-neutral-700"
+                  >
                     View project
                   </a>
                 </div>

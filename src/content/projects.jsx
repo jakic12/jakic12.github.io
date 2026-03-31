@@ -15,12 +15,13 @@ const projects = [
     name: "CNN-js",
     description: `CNN js is a convolutional neural network training library written for javascript.
     The library was created as an educational experiment. It supports convolutional
-    neural networks and deep neural networks. I made a <a href="https://jakic12.github.io/CNN-js-frontend" target="_blank">demo frontend</a> that can neural networks in your browser.
+    neural networks and deep neural networks. I made a <a href="https://jakic12.github.io/CNN-js-frontend" target="_blank">demo frontend</a> that can train CNNs in your browser.
     You can upload your own dataset or use a reduced version of the cifar-10 dataset already provided with the demo.
     You can also upload images and test the network from your browser.`,
     link: "https://jakic12.github.io/CNN-js-frontend",
     images: [CNNjsfrontend],
     tools: [javascript, react],
+    date: "2020-06-20",
   },
   {
     name: "Bezier regression",
@@ -30,6 +31,7 @@ const projects = [
     link: "https://jakic12.github.io/bezier-regression/",
     images: [bezier],
     tools: [javascript, html5, css3],
+    date: "2019-11-28",
   },
   {
     name: "Maze madness",
@@ -40,6 +42,7 @@ const projects = [
     link: "https://jakic12.github.io/maze-set/",
     images: [maze],
     tools: [javascript, html5, css3],
+    date: "2020-03-02",
   },
   {
     name: "Fri-fmf timetable",
@@ -48,6 +51,7 @@ const projects = [
     link: "https://jakic12.github.io/fri-fmf-timetable/",
     images: [timetable],
     tools: [react],
+    date: "2021-02-15",
   },
   {
     name: "Big XO",
@@ -56,6 +60,7 @@ const projects = [
     link: "https://jakic12.github.io/big-xo",
     images: [bigxo],
     tools: [react, nodejs],
+    date: "2024-09-27",
   },
   {
     name: "Brainfuck debugger",
@@ -64,6 +69,7 @@ const projects = [
     link: "https://jakic12.github.io/brainfuck-debugger/",
     images: [brainfuck],
     tools: [javascript, html5, css3],
+    date: "2020-11-26",
   },
   {
     name: "Calculate anything",
@@ -73,6 +79,7 @@ const projects = [
     link: "https://jakic12.github.io/calculate-anything",
     images: [calculator],
     tools: [react],
+    date: "2021-06-02",
   },
   {
     name: "React clone",
@@ -81,6 +88,7 @@ const projects = [
     link: "https://jakic12.github.io/simple-html-form/",
     images: [form],
     tools: [javascript, html5, css3],
+    date: "2019-11-05",
   },
 ];
 export default projects;
